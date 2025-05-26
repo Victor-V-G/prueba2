@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de Validación</title>
+    <script src="script2.js"></script>
     
 </head>
 <body>
@@ -35,6 +36,16 @@
 
         </tbody>
     </table>
+
+    <form id="miFormulario">
+        <label for="nombre">Nombre Actualizar:</label>
+        <input type="text" id="nombre1" name="nombre1">
+        <br>
+        <label for="edad">Edad Actualizar:</label>
+        <input type="number" id="edad1" name="edad1">
+        <br>
+        <button type="button" onclick="actualizar()" id="btnActualizar">Enviar</button>
+    </form>
 
 </body>
 </html>
