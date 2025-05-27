@@ -42,6 +42,13 @@ function validarNombre(elemento,valorIngresado,elementoError){
         elemento.style.color = "white"
         return false
     }
+    else if(valorIngresado <= 0){
+        alert("no se permiten numeros")
+        elementoError.innerText = "no se permiten numeros"
+        elemento.style.backgroundColor = "red"
+        elemento.style.color = "white"
+        return false
+    }
     else {
         alert("esta bueno")
         elementoError.innerText = ""
@@ -67,8 +74,8 @@ function validarEdad(elemento,valorIngresado,elementoError){
         return true
     }
     else{
-        alert("algo fallo")
-        elementoError.innerText = "algo fallo"
+        alert("edad incorrecta, debes tener 18 años o mas")
+        elementoError.innerText = "edad incorrecta, debes tener 18 años o mas"
         elemento.style.backgroundColor = "red"
         elemento.style.color = "white"
         return false
@@ -88,12 +95,20 @@ function cargarCuerpoTabla(){
 }
 
 function eliminar(indice){
-    personas = personas.filter((p,index)=>{
-        if (index != indice){
-            return p
-        }
-    })
-    cargarCuerpoTabla()
+    let consultarUsuarioEliminacion = confirm("¿Usted desea eliminar esta persona?")
+
+    if (consultarUsuarioEliminacion) {
+        alert("Persona eliminada correctamente")
+        personas = personas.filter((p,index)=>{
+            if(index != indice){
+                return p
+            }
+        })
+        cargarCuerpoTabla()
+    } 
+    else {
+        alert("Eliminación cancelada")
+    }
 }
 
 function cargarDatos(indice){
